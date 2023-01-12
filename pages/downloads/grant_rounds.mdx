@@ -1,0 +1,46 @@
+import Link from "next/dist/client/link";
+import {Table, Td, Th, Tr} from "nextra/components"
+
+## Historic Grants Data
+
+Gitcoin has been organizing grant rounds every quarter. The last round (GR15) was
+run in September 2022, before moving to the new grants protocol.
+
+export function HistoricGrantsData() {
+  const gr_contributions = [
+    { "number": 3, "name": "GR3_contributions.csv", "hash": "Qma1ikFcLCw2oXShmDkztueh3CLyRvH8LmHvCTLy5WFu6b", "size": 325524 },
+    { "number": 4, "name": "GR4_contributions.csv", "hash": "QmNikzWprkzNh3fNFXLwuyT1gHBXDDXS384UQnCqzmcsHB", "size": 829965 },
+    { "number": 5, "name": "GR5_contributions.csv", "hash": "QmQzWQrSJ27Lthc576tW9sCP6gu1Q4X68rpwH2vYrRySZA", "size": 922973 },
+    { "number": 6, "name": "GR6_contributions.csv", "hash": "QmPVXnqhZpb15QGg1HRGfbv6ag6YyRQ4tUKeJU3aQPotva", "size": 1301410 },
+    { "number": 7, "name": "GR7_contributions.csv", "hash": "QmfBpaUPRupckCttB9RFqey4qhFCxcFPbx1aSaa2pRwcZx", "size": 1912331 },
+    { "number": 8, "name": "GR8_contributions.csv", "hash": "QmTYxAWdwVUPJKfPVKb8pryrwmUbn4JERSZUxEVZ7inXpj", "size": 3348321 },
+    { "number": 9, "name": "GR9_contributions.csv", "hash": "QmcaYyCXkk3RqrUthdDYb8FBsh9AuvvtD98JcKjXVLEAwr", "size": 23729598 },
+    { "number": 10, "name": "GR10_contributions.csv", "hash": "QmbvA8gkdSPoU1cc9WhbAc5SLwyLXBNQ8VMn9Xefz37Q3a", "size": 40554994 },
+    { "number": 11, "name": "GR11_contributions.csv", "hash": "QmZZ8NSV57K6k9svFyz6ydNfmpDzBtyLNHMcJkKLZKPEkM", "size": 55189293 },
+    { "number": 12, "name": "GR12_contributions.csv", "hash": "QmeXcYoehGnTcFWnDvNdPMx4Rc3K9f28fDwuGUUXc24aet", "size": 61469917 },
+    { "number": 13, "name": "GR13_contributions.csv", "hash": "QmbLCRYSZKoxzPJwLSBGjU8rAddxJyahFku6AVYhPMerh7", "size": 38914016 },
+    { "number": 14, "name": "GR14_contributions.csv", "hash": "QmThYCAa9eh9DYa5ZwscMsz3WZ7AfDLNvUystEzz2D8xv9", "size": 74786229 },
+    { "number": 15, "name": "GR15_contributions.csv", "hash": "Qmc4pyarVQKMVp3NutcUHj3KuNq1TrFDdh4epMCD5w8Cax", "size": 56718251 },
+  ];
+
+  return (
+    <Table className="nx-mt-6">
+      <thead>
+        <Tr>
+          <Th>Round</Th>
+          <Th>Contributions</Th>
+        </Tr>
+      </thead>
+      <tbody>
+        {gr_contributions.map(x => (
+          <Tr key={x.hash}>
+            <Td>{x.number}</Td>
+            <Td><Link className="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:under]" href={"https://ipfs.io/ipfs/" + x.hash}>{x.name}</Link> <span className="nx-text-gray-500 nx-text-xs">{(x.size / 1e6).toFixed(2)}MB</span></Td>
+          </Tr>
+        ))}
+      </tbody>
+    </Table>
+  );
+}
+
+<HistoricGrantsData />
