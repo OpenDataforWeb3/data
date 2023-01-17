@@ -1,5 +1,5 @@
 import React from 'react'
-import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
+import { DocsThemeConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router';
 
 const title = 'FDD Data Hub';
@@ -7,7 +7,7 @@ const title = 'FDD Data Hub';
 const config : DocsThemeConfig = {
   logo: (
     <>
-      <img src="FDD_logo_white.svg" width={24} height={24} />
+      <img src="/FDD_logo_white.svg" width={24} height={24} />
       <span style={{ marginLeft: ".4em", fontWeight: 800 }}>{title}</span>
     </>
   ),
