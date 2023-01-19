@@ -44,3 +44,13 @@ export function HistoricGrantsData() {
 }
 
 <HistoricGrantsData />
+
+### Data dectionary
+- **address**: user's last known Etheruem address
+- **grant_id**: unique identifier for a grant
+- **checkout_type**: what was the payment network? (e.g. ZK-sync, Polygon, Ethereum Mainnet)
+- **amount_in_usdt**: value of donation in US dollars
+- **raw_amount_in_token**: value of the donation denomninated in the donated token
+- **token	amount_in_token_minus_gas**: value of the donation after gas is subtracted
+- **tx_id**: unique identifier for the transaction (onlky available for n on-privacy preserving networks - i.e. not available for ZK platforms)	
+- **created_on**: date donation was sent
