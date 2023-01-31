@@ -23,6 +23,11 @@ const networks = [
     endpoint:
       "https://api.thegraph.com/subgraphs/name/gitcoinco/grants-round-goerli-testnet",
   },
+  {
+    name: "main",
+    label: "Ethereum main",
+    endpoint: `https://gateway.thegraph.com/api/${process.env.NEXT_PUBLIC_THEGRAPH_API_KEY}/subgraphs/id/BQXTJRLZi7NWGq5AXzQQxvYNa5i1HmqALEJwy3gGJHCr`,
+  },
 ];
 
 export const hide_list = {
@@ -54,6 +59,15 @@ export const hide_list = {
   ],
   "fantom-testnet": [],
   goerli: [],
+  main: [
+    "0x156066581776f65ce9434fb7dde723b87b9c2e89",
+    "0x28d4164c6df015a79e1f6f7a3b1675791cddd545",
+    "0x3172a6cce26529e7dd2b533e7c3622a0b544f349",
+    "0x350e2257548df38c6b2009245332d73f5919834e",
+    "0x8e420122de3b3792abcc69921433a48868bcfac2",
+    "0xdf75054cd67217aee44b4f9e4ebc651c00330938",
+    "0xff519cf66c0ef800dcd32c92be89841859348fd6",
+  ],
 };
 
 export { networks };
