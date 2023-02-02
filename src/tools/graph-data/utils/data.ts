@@ -1,6 +1,7 @@
+import { formatUnits } from "ethers/lib/utils";
+import { tokens } from "../config";
 import { get_ipfs_data } from "../services/ipfs";
 import {
-  get_all_rounds,
   get_round,
   get_round_applications,
   get_round_votes,
@@ -32,7 +33,7 @@ export function fetch_applications(network, roundId) {
     });
 }
 
-export async function fetch_votes(network, round) {
+export async function fetch_votes(network, round, limit = 0) {
   const max_limit = 800;
   let votes = [];
   let lastId = "";
@@ -50,7 +51,6 @@ export async function fetch_votes(network, round) {
 
     if (!qfVotes || qfVotes?.length == 0) break;
 
-    console.log(qfVotes);
     votes = votes.concat(qfVotes);
     lastId = qfVotes?.at(-1).id;
     if (!lastId) break;
@@ -60,26 +60,23 @@ export async function fetch_votes(network, round) {
   return votes;
 }
 
-// `
-// Failed to get entities from store: unsupported filter ` > ` for value `null`
-// query = from "sgd474820"."qf_vote"[*]{id > null
-//   and join on votingStrategy with VotingStrategy(id = null)}
-//   order id, block_range first 1000 at 54850469 query_id 77ecbeea2e5b6fdc-6f17ebc380210dbd
-// `
-
 export async function fetch_data(network, roundId, options) {
   const res = await get_round(network, roundId);
-  console.log("res", res);
   const { data } = await res.json();
   const round = data.round;
-
-  console.log("round", round);
 
   const applications = options.applications
     ? await fetch_applications(network, roundId)
     : undefined;
-  const votes = options.votes ? await fetch_votes(network, round) : undefined;
-
+  const raw_votes = options.votes
+    ? await fetch_votes(network, round)
+    : undefined;
+  const votes = raw_votes?.map((vote) => {
+    const symbol = tokens[network][vote.token].symbol ?? vote.token;
+    const decimals = tokens[network][vote.token].decimals ?? 18;
+    const amount = formatUnits(vote.amount, decimals).toString() ?? vote.amount;
+    return { ...vote, token: symbol, amount: amount };
+  });
   return {
     round,
     applications,

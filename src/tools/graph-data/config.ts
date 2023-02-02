@@ -70,4 +70,66 @@ export const hide_list = {
   ],
 };
 
+export const tokens = {
+  main: {
+    "0x6b175474e89094c44da98b954eedeac495271d0f": {
+      symbol: "DAI",
+      decimals: 18,
+    },
+    "0x0000000000000000000000000000000000000000": {
+      symbol: "ETH",
+      decimals: 18,
+    },
+  },
+  fantom: {
+    "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e": {
+      symbol: "DAI",
+      decimals: 18,
+    },
+    "0x0000000000000000000000000000000000000000": {
+      symbol: "FTM",
+      decimals: 18,
+    },
+    "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83": {
+      symbol: "WFTM",
+      decimals: 18,
+    },
+    "0xc931f61b1534eb21d8c11b24f3f5ab2471d4ab50": {
+      symbol: "BUSD",
+      decimals: 18,
+    },
+  },
+  optimism: {
+    "0xda10009cbd5d07dd0cecc66161fc93d7c9000da1": {
+      symbol: "DAI",
+      decimals: 18,
+    },
+    "0x0000000000000000000000000000000000000000": {
+      symbol: "ETH",
+      decimals: 18,
+    },
+  },
+
+  "fantom-testnet": {
+    "0xede59d58d9b8061ff7d22e629ab2afa01af496f4": {
+      name: "DAI",
+      decimals: 18,
+    },
+  },
+  goerli: {
+    "0xa7c3bf25ffea8605b516cf878b7435fe1768c89b": {
+      name: "BUSD",
+      decimals: 18,
+    },
+    "0xf2edF1c091f683E3fb452497d9a98A49cBA84666": {
+      name: "DAI",
+      decimals: 18,
+    },
+    "0x0000000000000000000000000000000000000000": {
+      name: "ETH",
+      decimals: 18,
+    },
+  },
+};
+
 export { networks };
