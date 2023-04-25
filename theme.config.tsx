@@ -2,12 +2,12 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router';
 
-const title = 'FDD Data Hub';
+const title = 'ODC Data Hub';
 
 const config : DocsThemeConfig = {
   logo: (
     <>
-      <img src="/FDD_logo_white.svg" width={24} height={24} />
+      <img src="/favicon.svg" width={24} height={24} />
       <span style={{ marginLeft: ".4em", fontWeight: 800 }}>{title}</span>
     </>
   ),
@@ -15,12 +15,12 @@ const config : DocsThemeConfig = {
     placeholder: "Search...",
   },
   project: {
-    link: "https://github.com/Fraud-Detection-and-Defense/",
+    link: "https://github.com/OpenDataforWeb3/data"
   },
   chat: {
-    link: "https://discord.gg/gitcoin",
+    link: "https://discord.gg/4d6CTuaD",
   },
-  docsRepositoryBase: "https://github.com/Fraud-Detection-and-Defense/datahub/tree/main",
+  docsRepositoryBase: "https://github.com/OpenDataforWeb3/data/tree/main",
   footer: {
     text: "Gitcoin",
   },
@@ -39,7 +39,7 @@ const config : DocsThemeConfig = {
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:title" content={title} />
-      <meta property="og:description" content="The Data hub for FDD" />
+      <meta property="og:description" content="The Data hub for ODC" />
     </>
   ),
 };
