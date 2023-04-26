@@ -22,7 +22,7 @@ const config : DocsThemeConfig = {
   },
   docsRepositoryBase: "https://github.com/OpenDataforWeb3/data/tree/main",
   footer: {
-    text: "Gitcoin",
+    text: "OpenData Community",
   },
   useNextSeoProps() {
     const { route } = useRouter()
