@@ -22,7 +22,7 @@ const config : DocsThemeConfig = {
   },
   docsRepositoryBase: "https://github.com/Fraud-Detection-and-Defense/datahub/tree/main",
   footer: {
-    text: "Gitcoin",
+    text: "OpenData Community",
   },
   useNextSeoProps() {
     const { route } = useRouter()
